@@ -13,19 +13,19 @@ pipeline {
                 git 'https://github.com/Geopell-Cloud/myfirstclassrepo.git'
 
                 // Run Maven on a Unix agent.
-                //sh "mvn -Dmaven.test.failure.ignore=true clean package"
+                sh "mvnw -Dmaven.test.failure.ignore=true clean package"
 
                 // To run Maven on a Windows agent, use
-                 bat "mvnw.cmd -Dmaven.test.failure.ignore=true clean package"
+                // bat "mvnw.cmd -Dmaven.test.failure.ignore=true clean package"
             }
 	}
             stage('Test') {
 		    steps {
                 // Run Maven on a Unix agent.
-                //sh "mvn -Dmaven.test.failure.ignore=true clean package"
+                 sh "mvnw test"
 
                 // To run Maven on a Windows agent, use
-                 bat "mvnw.cmd test"
+                // bat "mvnw.cmd test"
             }
        }
     }	       
